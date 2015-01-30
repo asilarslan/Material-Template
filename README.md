@@ -1,6 +1,6 @@
 # Android Material Temlate
 
-This application interactive paging indicator, compatible with the `ViewPager` from the Android Support Library. 
+This application include interactive paging indicator, compatible with the `ViewPager` from the Android Support Library. 
 
 | Add Fragment          | Categories Fragment             | 
 |:-----------------------------:|:-----------------------------:|
