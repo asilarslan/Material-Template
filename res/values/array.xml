@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category_array1">
+        <item>Choose Category</item>
+        <item>+ADD CATEGORY</item>
+        <item>BANKA ŞİFRELERİ</item>
+        <item>MAIL ŞİFRELERİ</item>
+        <item>DATABASE ŞİFRELERİ</item>
+    </string-array>
+    
+    <string-array name="category_array2">
+        <item>Choose Category</item>
+        <item>BANKA ŞİFRELERİ</item>
+        <item>MAIL ŞİFRELERİ</item>
+        <item>DATABASE ŞİFRELERİ</item>
+    </string-array>
+</resources>
