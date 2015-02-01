@@ -4,14 +4,30 @@ This application include interactive paging indicator, compatible with the `View
 
 | Add Fragment          | Categories Fragment             | 
 |:-----------------------------:|:-----------------------------:|
-| ![Android Material Temlate Screenshot 1](https://raw.githubusercontent.com/asilarslan/Material-Temlate/master/screenshots/add.png)              | ![Android Material Temlate Screenshot 2](https://raw.githubusercontent.com/asilarslan/Material-Temlate/master/screenshots/category.png)| 
+| ![Android Material Temlate Screenshot 1](https://raw.githubusercontent.com/asilarslan/Material-Temlate/master/screenshots/add-rectangle.png)              | ![Android Material Temlate Screenshot 2](https://raw.githubusercontent.com/asilarslan/Material-Temlate/master/screenshots/category-rectangle.png)| 
 
 | List Fragment          | Search Fragment             | 
 |:-----------------------------:|:-----------------------------:|
-| ![Android Material Temlate Screenshot 3](https://raw.githubusercontent.com/asilarslan/Material-Temlate/master/screenshots/list.png)| ![Android Material Temlate Screenshot 4](https://raw.githubusercontent.com/asilarslan/Material-Temlate/master/screenshots/searh.png)| 
+| ![Android Material Temlate Screenshot 3](https://raw.githubusercontent.com/asilarslan/Material-Temlate/master/screenshots/list-rectangle.png)| ![Android Material Temlate Screenshot 4](https://raw.githubusercontent.com/asilarslan/Material-Temlate/master/screenshots/search-rectangle.png)| 
+If you want use triangle indicator change value pstsTriangleIndicator attribute
 
+    <tr.asil.arayuz.PagerSlidingTabStrip
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="48dip"
+            android:background="@drawable/background_tabs"
+            app:pstsDividerColor="#1A000000"
+            app:pstsIndicatorColor="#FF3F9FE0"
+            app:pstsTriangleIndicator="false"
+            app:pstsUnderlineColor="#FF3F9FE0" />
 
+| Add Fragment          | Categories Fragment             | 
+|:-----------------------------:|:-----------------------------:|
+| ![Android Material Temlate Screenshot 1](https://raw.githubusercontent.com/asilarslan/Material-Temlate/master/screenshots/add-triangle.png)              | ![Android Material Temlate Screenshot 2](https://raw.githubusercontent.com/asilarslan/Material-Temlate/master/screenshots/categories-triangle.png)| 
 
+| List Fragment          | Search Fragment             | 
+|:-----------------------------:|:-----------------------------:|
+| ![Android Material Temlate Screenshot 3](https://raw.githubusercontent.com/asilarslan/Material-Temlate/master/screenshots/list-triangle.png)| ![Android Material Temlate Screenshot 4](https://raw.githubusercontent.com/asilarslan/Material-Temlate/master/screenshots/search-triangle.png)| 
 
 
 Pre-requisites
