@@ -8,7 +8,11 @@
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="48dip"
-        android:background="@drawable/background_tabs" />
+        android:background="@drawable/background_tabs"
+        app:pstsDividerColor="#1A000000"
+        app:pstsIndicatorColor="#FF3F9FE0"
+        app:pstsTriangleIndicator="true"
+        app:pstsUnderlineColor="#FF3F9FE0" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
@@ -18,5 +22,4 @@
         android:layout_below="@+id/tabs"
         tools:context=".MainActivity" />
 
-    
 </RelativeLayout>

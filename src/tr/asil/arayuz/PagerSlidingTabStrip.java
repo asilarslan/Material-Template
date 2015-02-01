@@ -6,6 +6,9 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
+import android.graphics.Path;
+import android.graphics.Point;
+import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Parcel;
@@ -63,6 +66,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
 	private boolean shouldExpand = false;
 	private boolean textAllCaps = true;
+	private boolean triangleIndicator = false;
 
 	private int scrollOffset = 52;
 	private int indicatorHeight = 8;
@@ -135,6 +139,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 		shouldExpand = a.getBoolean(R.styleable.PagerSlidingTabStrip_pstsShouldExpand, shouldExpand);
 		scrollOffset = a.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_pstsScrollOffset, scrollOffset);
 		textAllCaps = a.getBoolean(R.styleable.PagerSlidingTabStrip_pstsTextAllCaps, textAllCaps);
+		triangleIndicator = a.getBoolean(R.styleable.PagerSlidingTabStrip_pstsTriangleIndicator, triangleIndicator);
 
 		a.recycle();
 
@@ -317,13 +322,31 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 			lineLeft = (currentPositionOffset * nextTabLeft + (1f - currentPositionOffset) * lineLeft);
 			lineRight = (currentPositionOffset * nextTabRight + (1f - currentPositionOffset) * lineRight);
 		}
-
-		canvas.drawRect(lineLeft, height - indicatorHeight, lineRight, height, rectPaint);
+		
+		if (triangleIndicator) {
+			Rect r = new Rect();
+			int left = (int) lineLeft + (int) (((lineRight - lineLeft) / 2) - (indicatorHeight / 2)) - 20;
+			int top = height - indicatorHeight;
+			int right = (int) left + indicatorHeight + 30;
+			int bottom = height;
+			r.set(left, top, right, bottom);
+			Path path = getEquilateralTriangle(r);
+			canvas.drawPath(path, rectPaint);
+		} 
+		else {
+		    canvas.drawRect(lineLeft, height - indicatorHeight, lineRight, height, rectPaint);
+		}
 
 		// draw underline
+		
+		
+		
 
 		rectPaint.setColor(underlineColor);
 		canvas.drawRect(0, height - underlineHeight, tabsContainer.getWidth(), height, rectPaint);
+		
+		
+		
 
 		// draw divider
 
@@ -333,6 +356,24 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 			canvas.drawLine(tab.getRight(), dividerPadding, tab.getRight(), height - dividerPadding, dividerPaint);
 		}
 	}
+	
+	public Path getEquilateralTriangle(Rect bounds) {
+        Point startPoint = null, p2 = null, p3 = null;
+        int width = bounds.right - bounds.left;
+        int height = bounds.bottom - bounds.top;
+
+        startPoint = new Point(bounds.left, bounds.bottom);
+
+        p2 = new Point(startPoint.x + width, startPoint.y);
+        p3 = new Point(startPoint.x + (width / 2), startPoint.y - height);
+
+        Path path = new Path();
+        path.moveTo(startPoint.x, startPoint.y);
+        path.lineTo(p2.x, p2.y);
+        path.lineTo(p3.x, p3.y);
+
+        return path;
+    }
 
 	private class PageListener implements OnPageChangeListener {
 
