@@ -50,6 +50,8 @@ Browse to the SDK installation directory and then to the Support Library folder.
 
 Click Finish to import the project. For the v7 cardview project, you should now see a new project titled android-support-v7-cardview.
 
+#Google Play
+https://play.google.com/store/apps/details?id=tr.asil.arayuz2
 
 #Developed By
 
